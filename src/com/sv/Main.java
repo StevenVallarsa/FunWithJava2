@@ -6,9 +6,19 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        monthlyMortgagePayment();
+//        monthlyMortgagePayment();
 //        fizzBang(50);
+        System.out.println(getYearlyGrossSalary(37.5, 25.50));
 
+    }
+
+    private static String getYearlyGrossSalary(double workHoursPerWeek,
+                                               double hourlyGrossPayRate) {
+        final double WEEKS_PER_YEAR = 52.4;
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        currency.setMaximumFractionDigits(2);
+
+        return currency.format(workHoursPerWeek * hourlyGrossPayRate * WEEKS_PER_YEAR);
     }
 
     private static void fizzBang(int finalNumber) {
